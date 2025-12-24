@@ -1,7 +1,7 @@
 from openai import OpenAI
 import os
 
-client = OpenAI("")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def openai_chat(system: str, user: str, temperature: float = 0.3) -> str:
     resp = client.chat.completions.create(
